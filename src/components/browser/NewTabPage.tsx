@@ -44,31 +44,20 @@ export function NewTabPage({ onNavigate, onOpenGames }: Props) {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          whileHover="hover"
           transition={{ duration: 0.35 }}
-          className="group flex flex-col items-center select-none mb-10 cursor-pointer"
+          className="flex flex-col items-center select-none mb-10 cursor-default"
         >
-          <motion.span
-            variants={{
-              rest: { scale: 1, letterSpacing: "0em" },
-              hover: { scale: 1.05, letterSpacing: "0.02em" },
-            }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className={`text-[76px] font-normal leading-none font-sans transition-colors group-hover:text-foreground ${
+          <span
+            className={`text-[76px] font-normal leading-none font-sans ${
               settings.discreetMode
                 ? "text-muted-foreground drop-shadow-[0_0_10px_rgba(255,255,255,0.05)] text-[64px]"
                 : "text-foreground drop-shadow-[0_0_25px_rgba(255,255,255,0.15)]"
             }`}
           >
             lucide
-          </motion.span>
-          <motion.div
-            variants={{
-              rest: { width: "320px", opacity: 0.9, scaleX: 1 },
-              hover: { width: "360px", opacity: 1, scaleX: 1.08 },
-            }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="h-[4px] bg-foreground relative mt-3 shadow-[0_0_20px_rgba(255,255,255,0.3)] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]"
+          </span>
+          <div
+            className="h-[4px] w-[320px] bg-foreground relative mt-3 shadow-[0_0_20px_rgba(255,255,255,0.3)]"
           />
         </motion.div>
 
