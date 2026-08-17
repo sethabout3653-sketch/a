@@ -57,6 +57,31 @@ export function SettingsPanel({ onClose }: { onClose: () => void }) {
           </div>
         </Section>
 
+        {/* Search Engine Selection */}
+        <Section title="Search Engine">
+          <div className="grid grid-cols-2 gap-2">
+            {[
+              { id: "https://duckduckgo.com/?q=%s", label: "DuckDuckGo" },
+              { id: "https://www.google.com/search?q=%s", label: "Google" },
+              { id: "https://www.bing.com/search?q=%s", label: "Bing" },
+              { id: "https://search.brave.com/search?q=%s", label: "Brave" },
+              { id: "https://search.yahoo.com/search?p=%s", label: "Yahoo" },
+            ].map((engine) => (
+              <button
+                key={engine.id}
+                onClick={() => update({ searchEngine: engine.id })}
+                className={`flex items-center justify-center gap-2 rounded-lg border px-3 py-2 text-xs transition-colors ${
+                  settings.searchEngine === engine.id
+                    ? "border-foreground bg-accent text-foreground shadow-sm"
+                    : "border-border text-muted-foreground hover:border-foreground/40 hover:text-foreground"
+                }`}
+              >
+                <span>{engine.label}</span>
+              </button>
+            ))}
+          </div>
+        </Section>
+
         {/* Tab Cloaking */}
         <Section title="Tab cloak">
           <div className="grid grid-cols-2 gap-2">

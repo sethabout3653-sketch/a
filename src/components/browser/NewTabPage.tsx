@@ -90,19 +90,6 @@ export function NewTabPage({ onNavigate, onOpenGames }: Props) {
               autoFocus
               className="flex-1 bg-transparent text-sm text-foreground outline-none placeholder:text-muted-foreground font-light"
             />
-
-            {/* Dropdown Selector Badge */}
-            <select
-              value={settings.searchEngine}
-              onChange={(e) => update({ searchEngine: e.target.value })}
-              className="rounded-lg bg-[#0a0a0a] border border-border/80 px-2.5 py-1 text-xs text-secondary-foreground outline-none hover:text-foreground cursor-pointer hover:border-neutral-700 transition-colors"
-            >
-              <option value="https://duckduckgo.com/?q=%s">DuckDuckGo</option>
-              <option value="https://www.google.com/search?q=%s">Google</option>
-              <option value="https://www.bing.com/search?q=%s">Bing</option>
-              <option value="https://search.brave.com/search?q=%s">Brave</option>
-              <option value="https://search.yahoo.com/search?p=%s">Yahoo</option>
-            </select>
           </form>
         </motion.div>
 
